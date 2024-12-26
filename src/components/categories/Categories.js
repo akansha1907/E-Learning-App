@@ -5,14 +5,12 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
-  Pressable,
 } from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 import {categoryType} from '../../utils/courses';
-import {BLACK, PRIMARY_APP_COLOR, SKY_BLUE} from '../../utils/colorConstants';
+import {PRIMARY_APP_COLOR} from '../../utils/colorConstants';
 import Button from '../button/Button';
-import {POPPINS_MEDIUM, POPPINS_REGULAR} from '../../assets/fonts';
 
 const Categories = props => {
   const {data, onSelectCategory, selectedCategory, loading, goToDetails} =

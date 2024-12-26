@@ -3,7 +3,6 @@ import {getDeviceHeight} from '../../utils/commonFunctions';
 import {
   BLACK,
   GRAY_66,
-  GRAY_B5,
   PRIMARY_APP_COLOR,
   SKY_BLUE,
   WHITE,
@@ -20,9 +19,10 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
   }),
   image: {
-    width: '95%',
-    height: getDeviceHeight() * 0.23,
+    width: '94%',
+    height: getDeviceHeight() * 0.2,
     resizeMode: 'stretch',
+    alignSelf: 'center',
     margin: 10,
     borderRadius: 14,
   },
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     borderColor: selected ? PRIMARY_APP_COLOR : GRAY_66,
     borderRadius: 10,
     borderWidth: 0.8,
-    marginBottom: 10,
+    marginBottom: 8,
   }),
   categoryText: selected => ({
     color: selected ? WHITE : GRAY_66,

@@ -1,75 +1,82 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {COURSE_DETAILS, DASHBOARD_SCREEN, MY_COURSES} from '../utils/constants';
+import {DASHBOARD_SCREEN, MY_COURSES} from '../utils/constants';
 import DashboardScreens from '../screens/dashboardScreen/DashboardScreens';
-import CourseDetail from '../screens/courseDetails/CourseDetail';
-import {GRAY_66, PRIMARY_APP_COLOR, WHITE} from '../utils/colorConstants';
-import {POPPINS_MEDIUM, POPPINS_REGULAR} from '../assets/fonts';
-import MyCourses from '../screens/myCourses/MyCourses';
+import {PRIMARY_APP_COLOR, WHITE} from '../utils/colorConstants';
+import {POPPINS_REGULAR} from '../assets/fonts';
+import {getDeviceWidth} from '../utils/commonFunctions';
+import MyEnrolledCourses from '../screens/myEnrolledCourses/MyEnrolledCourses';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
+      screenOptions={() => ({
         headerShown: false,
         tabBarShowLabel: true,
         tabBarStyle: {
           backgroundColor: WHITE,
           height: 84,
-          // paddingTop: 10,
-          // paddingBottom: 10,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
         },
         tabBarLabelStyle: {
-          fontSize: 14,
+          fontSize: 12,
           fontFamily: POPPINS_REGULAR,
-          marginTop: 5,
         },
         tabBarItemStyle: {
-          borderRadius: 20,
-          marginVertical: 10,
-          marginHorizontal: 14,
+          borderRadius: 10,
+          marginHorizontal: 10,
+          marginTop: -18,
         },
-        tabBarActiveBackgroundColor: PRIMARY_APP_COLOR,
-        tabBarLabel: ({focused}) => (
-          <Text
-            style={{
-              color: focused ? WHITE : GRAY_66,
-              fontSize: 12,
-              fontFamily: POPPINS_MEDIUM,
-              marginVertical: 5,
-              width: '100%',
-              textAlign: 'center',
-            }}>
-            {route.name}
-          </Text>
-        ),
       })}>
       <Tab.Screen
         name={DASHBOARD_SCREEN}
         component={DashboardScreens}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/images/home.png')}
-              style={[styles.image, {tintColor: focused ? WHITE : GRAY_66}]}
-            />
+          tabBarLabel: ({focused}) => (
+            <View
+              style={[
+                styles.tabContainer,
+                {backgroundColor: focused ? PRIMARY_APP_COLOR : WHITE},
+              ]}>
+              <Image
+                source={require('../assets/images/home.png')}
+                style={[styles.image, {tintColor: focused ? '#fff' : '#000'}]}
+              />
+              <Text style={[styles.label, {color: focused ? WHITE : '#000'}]}>
+                Home
+              </Text>
+            </View>
           ),
+          tabBarIcon: () => {
+            return null; //to hide default icon, so that it not conflicts with custom icon
+          },
         }}
       />
       <Tab.Screen
         name={MY_COURSES}
-        component={MyCourses}
+        component={MyEnrolledCourses}
         options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/images/open-book.png')}
-              style={[styles.image, {tintColor: focused ? WHITE : GRAY_66}]}
-            />
+          tabBarLabel: ({focused}) => (
+            <View
+              style={[
+                styles.tabContainer,
+                {backgroundColor: focused ? PRIMARY_APP_COLOR : WHITE},
+              ]}>
+              <Image
+                source={require('../assets/images/open-book.png')}
+                style={[styles.image, {tintColor: focused ? '#fff' : '#000'}]}
+              />
+              <Text style={[styles.label, {color: focused ? WHITE : '#000'}]}>
+                My Courses
+              </Text>
+            </View>
           ),
+          tabBarIcon: () => {
+            return null; //to hide default icon
+          },
         }}
       />
     </Tab.Navigator>
@@ -78,5 +85,22 @@ const BottomTabNavigator = () => {
 
 export default BottomTabNavigator;
 const styles = StyleSheet.create({
-  image: {height: 32, width: 32},
+  image: {height: 28, width: 28},
+  tabContainer: {
+    backgroundColor: 'red',
+    width: getDeviceWidth() * 0.36,
+    paddingVertical: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+  },
+  label: {
+    fontSize: 14,
+    fontFamily: POPPINS_REGULAR,
+    textAlign: 'center',
+  },
+  icon: {
+    height: 24,
+    width: 24,
+  },
 });

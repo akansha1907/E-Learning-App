@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {BLACK} from '../../utils/colorConstants';
-import {POPPINS_BOLD, POPPINS_SEMIBOLD} from '../../assets/fonts';
+import {POPPINS_SEMIBOLD} from '../../assets/fonts';
 
 export const styles = StyleSheet.create({
   image: {
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
   iconContainer: {alignSelf: 'flex-start', padding: 12},
   title: {
-    fontSize: 16,
+    fontSize: 17,
     color: BLACK,
     padding: 12,
     marginTop: 2,

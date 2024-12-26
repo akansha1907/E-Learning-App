@@ -1,6 +1,13 @@
 import {StyleSheet} from 'react-native';
 import {getDeviceHeight} from '../../utils/commonFunctions';
-import {BLACK, SKY_BLUE, WHITE} from '../../utils/colorConstants';
+import {
+  BLACK,
+  GRAY_66,
+  GRAY_B5,
+  GRAY_LIGHT,
+  SKY_BLUE,
+  WHITE,
+} from '../../utils/colorConstants';
 import {POPPINS_MEDIUM, POPPINS_REGULAR} from '../../assets/fonts';
 
 export const styles = StyleSheet.create({
@@ -64,4 +71,18 @@ export const styles = StyleSheet.create({
     width: '100%',
     elevation: 5,
   },
+  skillsView: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 10,
+    gap: 8,
+  },
+  skill: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 6,
+    borderColor: GRAY_B5,
+    backgroundColor: GRAY_LIGHT,
+  },
+  skillText: {fontFamily: POPPINS_REGULAR, color: GRAY_66, fontSize: 12},
 });

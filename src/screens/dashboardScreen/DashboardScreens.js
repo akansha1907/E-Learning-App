@@ -28,7 +28,7 @@ const DashboardScreens = navigation => {
       setLoading(false); // Stop loading after setting data
     }, 200);
   };
-  console.log('selectedCategory ', selectedCategory);
+
   const goToDetails = (courseId, title) => {
     navigation?.navigation?.navigate(COURSE_DETAILS, {
       id: courseId,

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {PRIMARY_APP_COLOR, WHITE} from '../../utils/colorConstants';
-import {POPPINS_MEDIUM, POPPINS_SEMIBOLD} from '../../assets/fonts';
+import {POPPINS_MEDIUM} from '../../assets/fonts';
 
 export const styles = StyleSheet.create({
   btnText: {
