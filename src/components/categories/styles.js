@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   }),
   image: {
     width: '94%',
-    height: getDeviceHeight() * 0.2,
+    height: getDeviceHeight() * 0.21,
     resizeMode: 'stretch',
     alignSelf: 'center',
     margin: 10,
