@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "894443979783",
+    "project_id": "courseexplorer-15733",
+    "storage_bucket": "courseexplorer-15733.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894443979783:android:3be5740542216b753456a2",
+        "android_client_info": {
+          "package_name": "com.courseexplore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894443979783-b4gjqhcem68f31gnhkr24ffrbtfdoa9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.courseexplore",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "894443979783-b89ekcj6409giggv7mgem7vjkio3dbp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiA3n_fIU5e6ZSo8fCFbdjIpwe5AhWgq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894443979783-b89ekcj6409giggv7mgem7vjkio3dbp9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "894443979783-qbrgeqitd4df8qso3qi7p9ns7afdq46d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.CourseExplore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,6 +8,22 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+# Add this line to use frameworks
+use_frameworks! :linkage => :static
+#$RNFirebaseAsStaticFramework = true
+
+pod 'FirebaseCoreInternal', :modular_headers => true
+pod 'GoogleUtilities', :modular_headers => true
+pod 'FirebaseCore', :modular_headers => true
+pod 'Firebase/Auth',:modular_headers=>true
+
+
+# Add modular headers for transitive dependencies
+pod 'FirebaseAuthInterop', :modular_headers => true
+pod 'FirebaseAppCheckInterop', :modular_headers => true
+pod 'FirebaseCoreExtension', :modular_headers => true
+pod 'RecaptchaInterop', :modular_headers => true
+
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green

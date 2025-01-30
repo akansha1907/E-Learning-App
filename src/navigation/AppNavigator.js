@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   COURSE_DETAILS,
   DASHBOARD_SCREEN,
+  LOGIN,
   SPLASH_SCREEN,
   TAB_NAVIGATOR,
 } from '../utils/constants';
@@ -11,6 +12,7 @@ import DashboardScreens from '../screens/dashboardScreen/DashboardScreens';
 import CourseDetail from '../screens/courseDetails/CourseDetail';
 import BottomTabNavigator from './BottomTabNavigator';
 import SplashScreen from '../screens/splashScreen/SplashScreen';
+import Login from '../screens/login/logins';
 
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -23,6 +25,7 @@ const AppNavigator = () => {
         <Stack.Screen name={TAB_NAVIGATOR} component={BottomTabNavigator} />
         <Stack.Screen name={DASHBOARD_SCREEN} component={DashboardScreens} />
         <Stack.Screen name={COURSE_DETAILS} component={CourseDetail} />
+        <Stack.Screen name={LOGIN} component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

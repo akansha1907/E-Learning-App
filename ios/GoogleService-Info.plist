@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>894443979783-qbrgeqitd4df8qso3qi7p9ns7afdq46d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.894443979783-qbrgeqitd4df8qso3qi7p9ns7afdq46d</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>894443979783-b4gjqhcem68f31gnhkr24ffrbtfdoa9u.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD5Y1HCgi_3q0r1k6_4qrfrnYN0qJ6zmow</string>
+	<key>GCM_SENDER_ID</key>
+	<string>894443979783</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.CourseExplore</string>
+	<key>PROJECT_ID</key>
+	<string>courseexplorer-15733</string>
+	<key>STORAGE_BUCKET</key>
+	<string>courseexplorer-15733.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:894443979783:ios:52d6b21c0b7698fc3456a2</string>
+</dict>
+</plist>
