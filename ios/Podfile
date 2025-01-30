@@ -10,7 +10,6 @@ prepare_react_native_project!
 
 # Add this line to use frameworks
 use_frameworks! :linkage => :static
-#$RNFirebaseAsStaticFramework = true
 
 pod 'FirebaseCoreInternal', :modular_headers => true
 pod 'GoogleUtilities', :modular_headers => true
