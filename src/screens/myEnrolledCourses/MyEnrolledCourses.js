@@ -1,48 +1,52 @@
-import {View, Text, FlatList, Image} from 'react-native';
-import React from 'react';
-import {useSelector} from 'react-redux';
-import {styles} from './styles';
-import BackIconHeader from '../../components/backIconHeader/BackIconHeader';
-import Button from '../../components/button/Button';
+// screens/HistoryScreen.js
+import React, {useEffect, useState} from 'react';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MyEnrolledCourses = () => {
-  const {courses} = useSelector(state => state.MyCourses);
-  const renderCourses = ({item}) => {
-    return (
-      <View style={styles.courseView}>
-        <View style={styles.contentView}>
-          <Image source={item?.image} style={styles.image} />
-          <View style={styles.titleView}>
-            <Text style={styles.title}>{item?.name}</Text>
-            <Button
-              title="Go To Course"
-              buttonStyle={styles.buttonStyle}
-              textStyle={styles.textStyle}
-            />
-          </View>
-        </View>
-      </View>
-    );
+  const [history, setHistory] = useState([]);
+
+  // Load history from AsyncStorage on initial render
+  useEffect(() => {
+    loadHistory();
+  }, []);
+
+  // Load history from AsyncStorage
+  const loadHistory = async () => {
+    const savedHistory = await AsyncStorage.getItem('history');
+    if (savedHistory) {
+      setHistory(JSON.parse(savedHistory));
+    }
   };
+
   return (
     <View style={styles.container}>
-      <BackIconHeader title={'My Courses'} icon={false} />
-      {courses?.length < 1 ? (
-        <View style={styles.emptyView}>
-          <Text style={styles.emptyCourse}>
-            You haven't enrolled in any course yet.
-          </Text>
-        </View>
-      ) : (
-        <FlatList
-          data={courses}
-          showsVerticalScrollIndicator={false}
-          renderItem={renderCourses}
-          style={styles.flatList}
-        />
-      )}
+      <FlatList
+        data={history}
+        renderItem={({item}) => (
+          <View style={styles.historyItem}>
+            <Text>{item.name}</Text>
+            <Text>
+              Completed at: {new Date(item.completionTime).toLocaleString()}
+            </Text>
+          </View>
+        )}
+        keyExtractor={item => item.id}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+  historyItem: {
+    padding: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+});
 
 export default MyEnrolledCourses;

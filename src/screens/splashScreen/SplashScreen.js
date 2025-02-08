@@ -9,7 +9,7 @@ const SplashScreen = navigation => {
     setTimeout(() => {
       //dispatch the tab navigator instead of navigate, so that user will not see splash screen when pressing back i.e. to remove splash screen from stack
       // navigation.navigation.dispatch(StackActions.replace(TAB_NAVIGATOR));
-      navigation.navigation.navigate(LOGIN);
+      navigation.navigation.navigate(TAB_NAVIGATOR);
     }, 2000);
   }, [navigation]);
 

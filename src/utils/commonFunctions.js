@@ -6,3 +6,6 @@ export const getDeviceHeight = () => {
 export const getDeviceWidth = () => {
   return Dimensions.get('window').width;
 };
+export const sum = (a, b) => {
+  return a + b;
+};
