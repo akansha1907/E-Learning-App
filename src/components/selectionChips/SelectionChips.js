@@ -6,6 +6,7 @@ import {
   SKY_BLUE_LIGHT,
   WHITE,
 } from '../../utils/colorConstants';
+import {POPPINS_MEDIUM} from '../../assets/fonts';
 
 const SelectionChips = props => {
   const {data, onSelectCategory, selectedCategory} = props || {};
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   }),
   title: selectedCategory => ({
     color: selectedCategory ? WHITE : PRIMARY_APP_COLOR,
-    fontWeight: '500',
+    fontFamily: POPPINS_MEDIUM,
+    fontSize: 13,
   }),
 });

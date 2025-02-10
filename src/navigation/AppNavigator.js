@@ -9,7 +9,6 @@ import {
   TAB_NAVIGATOR,
 } from '../utils/constants';
 import DashboardScreens from '../screens/dashboardScreen/DashboardScreens';
-import CourseDetail from '../screens/courseDetails/CourseDetail';
 import BottomTabNavigator from './BottomTabNavigator';
 import SplashScreen from '../screens/splashScreen/SplashScreen';
 import Login from '../screens/login/logins';
@@ -24,7 +23,6 @@ const AppNavigator = () => {
         <Stack.Screen name={SPLASH_SCREEN} component={SplashScreen} />
         <Stack.Screen name={TAB_NAVIGATOR} component={BottomTabNavigator} />
         <Stack.Screen name={DASHBOARD_SCREEN} component={DashboardScreens} />
-        <Stack.Screen name={COURSE_DETAILS} component={CourseDetail} />
         <Stack.Screen name={LOGIN} component={Login} />
       </Stack.Navigator>
     </NavigationContainer>

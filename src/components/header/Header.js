@@ -6,8 +6,10 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.title}>Up↑ Skills</Text>
-        <Text style={styles.subTitle}>Skill up with UpSkill </Text>
+        <Text style={styles.title}>Task Track</Text>
+        <Text style={styles.subTitle}>
+          Track your all tasks and complete on time{' '}
+        </Text>
       </View>
       <Image
         source={require('../../assets/images/bell.png')}

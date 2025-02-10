@@ -1,12 +1,17 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {DASHBOARD_SCREEN, MY_COURSES} from '../utils/constants';
+import {
+  COMPLETED_TASKS,
+  DASHBOARD_SCREEN,
+  MY_COURSES,
+} from '../utils/constants';
 import DashboardScreens from '../screens/dashboardScreen/DashboardScreens';
 import {PRIMARY_APP_COLOR, WHITE} from '../utils/colorConstants';
 import {POPPINS_REGULAR} from '../assets/fonts';
 import {getDeviceWidth} from '../utils/commonFunctions';
-import MyEnrolledCourses from '../screens/myEnrolledCourses/MyEnrolledCourses';
+import MyEnrolledCourses from '../screens/timerHistory/CompletedTasks';
+import CompletedTasks from '../screens/timerHistory/CompletedTasks';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -56,8 +61,8 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name={MY_COURSES}
-        component={MyEnrolledCourses}
+        name={COMPLETED_TASKS}
+        component={CompletedTasks}
         options={{
           tabBarLabel: ({focused}) => (
             <View
@@ -66,11 +71,11 @@ const BottomTabNavigator = () => {
                 {backgroundColor: focused ? PRIMARY_APP_COLOR : WHITE},
               ]}>
               <Image
-                source={require('../assets/images/open-book.png')}
+                source={require('../assets/images/planning.png')}
                 style={[styles.image, {tintColor: focused ? '#fff' : '#000'}]}
               />
               <Text style={[styles.label, {color: focused ? WHITE : '#000'}]}>
-                My Courses
+                History
               </Text>
             </View>
           ),
