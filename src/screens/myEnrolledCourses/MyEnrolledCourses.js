@@ -1,52 +1,50 @@
-// screens/HistoryScreen.js
-import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, FlatList, StyleSheet, SafeAreaView} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MyEnrolledCourses = () => {
   const [history, setHistory] = useState([]);
 
-  // Load history from AsyncStorage on initial render
   useEffect(() => {
     loadHistory();
   }, []);
 
-  // Load history from AsyncStorage
   const loadHistory = async () => {
-    const savedHistory = await AsyncStorage.getItem('history');
-    if (savedHistory) {
-      setHistory(JSON.parse(savedHistory));
+    try {
+      const savedHistory = await AsyncStorage.getItem('history');
+      console.log('history ', savedHistory);
+      if (savedHistory) {
+        setHistory(JSON.parse(savedHistory));
+      }
+    } catch (error) {
+      console.error('Error loading history:', error);
     }
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Completed Timers</Text>
       <FlatList
         data={history}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
-          <View style={styles.historyItem}>
-            <Text>{item.name}</Text>
+          <View style={styles.timerContainer}>
+            <Text>Name: {item.name}</Text>
+            <Text>Category: {item.category}</Text>
             <Text>
-              Completed at: {new Date(item.completionTime).toLocaleString()}
+              Completed At: {new Date(item.completedAt).toLocaleString()}
             </Text>
           </View>
         )}
-        keyExtractor={item => item.id}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  historyItem: {
-    padding: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
+  container: {flex: 1, padding: 16},
+  title: {fontSize: 20, fontWeight: 'bold', marginBottom: 10},
+  timerContainer: {padding: 10, borderBottomWidth: 1, borderColor: '#ccc'},
 });
 
 export default MyEnrolledCourses;

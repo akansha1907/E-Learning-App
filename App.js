@@ -9,7 +9,7 @@ const App = () => {
     <Provider store={store}>
       <View style={styles.container}>
         <StatusBar
-          barStyle={'light-content'}
+          barStyle={'dark-content'}
           backgroundColor={PRIMARY_APP_COLOR}
         />
         <AppNavigator />

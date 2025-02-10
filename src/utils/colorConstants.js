@@ -5,3 +5,5 @@ export const GRAY_66 = '#666666';
 export const GRAY_B5 = '#B5B5B5';
 export const SKY_BLUE = '#3D8FEF';
 export const GRAY_LIGHT = '#E8E8E8';
+export const SKY_BLUE_LIGHT = '#ebf3fd';
+export const RED_COLOR = '#FF0000';
