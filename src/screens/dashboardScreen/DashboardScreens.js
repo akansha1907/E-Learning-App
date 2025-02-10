@@ -12,14 +12,7 @@ import SelectionChips from '../../components/selectionChips/SelectionChips';
 import Button from '../../components/button/Button';
 import Header from '../../components/header/Header';
 import {styles} from './styles';
-import {
-  COMPLETED,
-  PAUSED,
-  RESET,
-  RUNNING,
-  TIMERS,
-  TIMERS_HISTORY,
-} from '../../utils/constants';
+import {COMPLETED, PAUSED, RESET, RUNNING, TIMERS} from '../../utils/constants';
 import {getItem, setItem} from '../../utils/asyncStorage';
 import TimerItem from '../../components/timerItem/TimerItem';
 import {saveTimerToHistory, timerCategories} from './logic';
@@ -81,8 +74,8 @@ const DashboardScreens = () => {
     };
 
     const savedTimers = await getItem(TIMERS);
-    const timers = savedTimers ? JSON.parse(savedTimers) : [];
-    timers.push(newTimer);
+    const _timers = savedTimers ? JSON.parse(savedTimers) : [];
+    _timers.push(newTimer);
     await setItem(TIMERS, timers);
 
     setModalVisible(false);
@@ -153,6 +146,7 @@ const DashboardScreens = () => {
   useEffect(() => {
     groupTimersByCategory(timers);
   }, [timers]);
+
   // Toggle expanded/collapsed state for a category
   const toggleCategory = _category => {
     setExpandedCategories(prev => ({
